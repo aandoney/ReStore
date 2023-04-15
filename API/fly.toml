@@ -1,0 +1,33 @@
+# fly.toml file generated for aandoneyrestore on 2023-04-14T08:11:37-06:00
+
+app = "aandoneyrestore"
+kill_signal = "SIGINT"
+kill_timeout = 5
+mounts = []
+primary_region = "qro"
+processes = []
+
+[build]
+  image = "aandoney/restore:latest"
+
+[env]
+  ASPNETCORE_URLS="http://+:8080"
+  StripeSettings__PublishableKey="pk_test_51MvpWkIgweGAeK0CfixKN6G0vRgF8t7gQlDGuFbx3Y5MO9FIrGZGLdbhCG23afiFxbXqilA8K7hkuQaRGOuDLe15005DBOgWUE"
+
+[[services]]
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  [services.concurrency]
+    hard_limit = 25
+    soft_limit = 20
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443

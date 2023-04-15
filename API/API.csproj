@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>e6733f47-60ac-416e-be53-387fe9fc8be8</UserSecretsId>
+    <UserSecretsId>0a8fa911-b469-42ab-85d8-ff55b74371f7</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +16,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.2" />
     <PackageReference Include="Stripe.net" Version="41.13.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
